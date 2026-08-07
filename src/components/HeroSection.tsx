@@ -2,7 +2,7 @@ import React from 'react';
 import { COMPANY_CONTACT } from '../data/mockData';
 import ScrollExpandMedia from './ui/scroll-expansion-hero';
 import heroBackground from '../assets/images/hero-background.webp';
-import heroMedia from '../assets/images/portfolio-residencia-alpha.webp';
+import heroVideo from '../assets/videos/hero-banner.mp4';
 
 interface HeroSectionProps {
   onOpenQuoteModal: () => void;
@@ -26,10 +26,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal, onHe
 
   return (
     <ScrollExpandMedia
-      mediaType="image"
-      mediaSrc={heroMedia}
+      mediaType="video"
+      mediaSrc={heroVideo}
       bgImageSrc={heroBackground}
-      title="Seu ambiente, personalizado por quem faz isso há 3 décadas"
+      title="Ambientes com identidade"
       date="Mais de 30 anos transformando ambientes"
       scrollToExpand="Role para explorar nossos projetos"
       onExpandedChange={onHeroExpandedChange}
