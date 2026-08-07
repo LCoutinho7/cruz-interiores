@@ -1,11 +1,4 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  ReactNode,
-  TouchEvent,
-  WheelEvent,
-} from 'react';
+import { useEffect, useRef, useState, ReactNode } from 'react';
 import { motion } from 'motion/react';
 
 interface ScrollExpandMediaProps {
@@ -36,128 +29,53 @@ const ScrollExpandMedia = ({
   onProgressChange,
 }: ScrollExpandMediaProps) => {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const [showContent, setShowContent] = useState<boolean>(false);
-  const [mediaFullyExpanded, setMediaFullyExpanded] = useState<boolean>(false);
-  const [touchStartY, setTouchStartY] = useState<number>(0);
   const [isMobileState, setIsMobileState] = useState<boolean>(false);
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    setScrollProgress(0);
-    setShowContent(false);
-    setMediaFullyExpanded(false);
-  }, [mediaType]);
+  const showContent = scrollProgress >= 1;
 
   useEffect(() => {
-    onExpandedChange?.(mediaFullyExpanded);
-  }, [mediaFullyExpanded, onExpandedChange]);
+    setScrollProgress(0);
+  }, [mediaType]);
 
   useEffect(() => {
     onProgressChange?.(scrollProgress);
   }, [scrollProgress, onProgressChange]);
 
   useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
-        setMediaFullyExpanded(false);
-        e.preventDefault();
-      } else if (!mediaFullyExpanded) {
-        e.preventDefault();
-        const scrollDelta = e.deltaY * 0.0009;
-        const newProgress = Math.min(
-          Math.max(scrollProgress + scrollDelta, 0),
-          1
-        );
-        setScrollProgress(newProgress);
+    onExpandedChange?.(showContent);
+  }, [showContent, onExpandedChange]);
 
-        if (newProgress >= 1) {
-          setMediaFullyExpanded(true);
-          setShowContent(true);
-        } else if (newProgress < 0.75) {
-          setShowContent(false);
-        }
-      }
-    };
-
-    const handleTouchStart = (e: TouchEvent) => {
-      setTouchStartY(e.touches[0].clientY);
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!touchStartY) return;
-
-      const touchY = e.touches[0].clientY;
-      const deltaY = touchStartY - touchY;
-
-      if (mediaFullyExpanded && deltaY < -20 && window.scrollY <= 5) {
-        setMediaFullyExpanded(false);
-        e.preventDefault();
-      } else if (!mediaFullyExpanded) {
-        e.preventDefault();
-        // Increase sensitivity for mobile, especially when scrolling back
-        const scrollFactor = deltaY < 0 ? 0.008 : 0.005; // Higher sensitivity for scrolling back
-        const scrollDelta = deltaY * scrollFactor;
-        const newProgress = Math.min(
-          Math.max(scrollProgress + scrollDelta, 0),
-          1
-        );
-        setScrollProgress(newProgress);
-
-        if (newProgress >= 1) {
-          setMediaFullyExpanded(true);
-          setShowContent(true);
-        } else if (newProgress < 0.75) {
-          setShowContent(false);
-        }
-
-        setTouchStartY(touchY);
-      }
-    };
-
-    const handleTouchEnd = (): void => {
-      setTouchStartY(0);
-    };
-
+  // Progress is derived directly from the real scroll position of the section,
+  // so it reacts identically to wheel, trackpad, touch, keyboard, the native
+  // scrollbar, and middle-click autoscroll — no input-specific listeners needed.
+  useEffect(() => {
     const handleScroll = (): void => {
-      if (!mediaFullyExpanded) {
-        window.scrollTo(0, 0);
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const scrollableDistance = rect.height - window.innerHeight;
+
+      if (scrollableDistance <= 0) {
+        setScrollProgress(1);
+        return;
       }
+
+      const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
+      setScrollProgress(progress);
     };
 
-    window.addEventListener('wheel', handleWheel as unknown as EventListener, {
-      passive: false,
-    });
-    window.addEventListener('scroll', handleScroll as EventListener);
-    window.addEventListener(
-      'touchstart',
-      handleTouchStart as unknown as EventListener,
-      { passive: false }
-    );
-    window.addEventListener(
-      'touchmove',
-      handleTouchMove as unknown as EventListener,
-      { passive: false }
-    );
-    window.addEventListener('touchend', handleTouchEnd as EventListener);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
 
     return () => {
-      window.removeEventListener(
-        'wheel',
-        handleWheel as unknown as EventListener
-      );
-      window.removeEventListener('scroll', handleScroll as EventListener);
-      window.removeEventListener(
-        'touchstart',
-        handleTouchStart as unknown as EventListener
-      );
-      window.removeEventListener(
-        'touchmove',
-        handleTouchMove as unknown as EventListener
-      );
-      window.removeEventListener('touchend', handleTouchEnd as EventListener);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
-  }, [scrollProgress, mediaFullyExpanded, touchStartY]);
+  }, []);
 
   useEffect(() => {
     const checkIfMobile = (): void => {
@@ -178,12 +96,12 @@ const ScrollExpandMedia = ({
   const restOfTitle = title ? title.split(' ').slice(1).join(' ') : '';
 
   return (
-    <div
-      ref={sectionRef}
-      className="transition-colors duration-700 ease-in-out overflow-hidden"
-    >
-      <section className="relative flex flex-col items-center justify-start min-h-[100dvh]">
-        <div className="relative w-full flex flex-col items-center min-h-[100dvh]">
+    <div className="transition-colors duration-700 ease-in-out">
+      <div ref={sectionRef} className="relative h-[calc(100dvh+90vh)]">
+        {/* overflow-hidden lives here (on the sticky element itself), never on an
+            ancestor — overflow-hidden on an ancestor of a position:sticky element
+            breaks its ability to unstick when scrolled past. */}
+        <section className="sticky top-0 h-[100dvh] overflow-hidden flex flex-col items-center justify-start">
           <motion.div
             className="absolute inset-0 z-0 h-full"
             initial={{ opacity: 0 }}
@@ -200,8 +118,8 @@ const ScrollExpandMedia = ({
             <div className="absolute inset-0 bg-black/45" />
           </motion.div>
 
-          <div className="container mx-auto flex flex-col items-center justify-start relative z-10">
-            <div className="flex flex-col items-center justify-center w-full h-[100dvh] relative">
+          <div className="container mx-auto flex flex-col items-center justify-center relative z-10 h-full">
+            <div className="flex flex-col items-center justify-center w-full h-full relative">
               <div
                 className="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-none rounded-2xl"
                 style={{
@@ -289,7 +207,7 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <motion.h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white transition-none"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white/30 transition-none"
                   style={{
                     transform: `translateX(-${textTranslateX}vw)`,
                     textShadow: '0 4px 20px rgba(0,0,0,0.65)',
@@ -298,7 +216,7 @@ const ScrollExpandMedia = ({
                   {firstWord}
                 </motion.h1>
                 <motion.span
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white transition-none"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white/30 transition-none"
                   style={{
                     transform: `translateX(${textTranslateX}vw)`,
                     textShadow: '0 4px 20px rgba(0,0,0,0.65)',
@@ -308,20 +226,20 @@ const ScrollExpandMedia = ({
                 </motion.span>
               </div>
             </div>
-
-            {children && (
-              <motion.section
-                className="flex flex-col w-full px-8 py-10 md:px-16 lg:py-20"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: showContent ? 1 : 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                {children}
-              </motion.section>
-            )}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+
+      {children && (
+        <motion.section
+          className="flex flex-col w-full px-8 py-10 md:px-16 lg:py-20"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showContent ? 1 : 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          {children}
+        </motion.section>
+      )}
     </div>
   );
 };
