@@ -5,9 +5,10 @@ import { COMPANY_CONTACT } from '../data/mockData';
 interface HeaderProps {
   onOpenQuoteModal: () => void;
   activeSection?: string;
+  visible?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection, visible = true }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -41,9 +42,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection 
   return (
     <header
       id="top-nav"
-      className={`fixed top-0 left-0 right-0 w-full z-50 bg-[#f8f9fa] border-b border-[#c5c6cf]/60 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 bg-[#f8f9fa] border-b border-[#c5c6cf]/60 transition-all duration-500 ${
         isScrolled ? 'shadow-md py-3' : 'py-4'
-      }`}
+      } ${visible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'}`}
     >
       <div className="max-w-[1200px] mx-auto px-6 md:px-8 flex justify-between items-center">
         {/* Brand Logo */}

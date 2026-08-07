@@ -25,6 +25,7 @@ export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [initialServiceForModal, setInitialServiceForModal] = useState('Papel de Parede');
   const [selectedLightboxItem, setSelectedLightboxItem] = useState<PortfolioItem | null>(null);
+  const [isHeroExpanded, setIsHeroExpanded] = useState(false);
 
   const handleOpenQuoteModal = (serviceName?: string) => {
     if (serviceName) {
@@ -35,12 +36,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-[#191c1d] flex flex-col font-sans selection:bg-[#1f57c9] selection:text-white">
-      {/* Fixed Header */}
-      <Header onOpenQuoteModal={() => handleOpenQuoteModal()} />
+      {/* Fixed Header — hidden until the hero intro has fully expanded */}
+      <Header onOpenQuoteModal={() => handleOpenQuoteModal()} visible={isHeroExpanded} />
 
       {/* Main Page Layout */}
       <main className="flex-grow">
-        <HeroSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+        <HeroSection
+          onOpenQuoteModal={() => handleOpenQuoteModal()}
+          onHeroExpandedChange={setIsHeroExpanded}
+        />
         <TrustBanner />
         <TriageSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
         <ProblemSection />
