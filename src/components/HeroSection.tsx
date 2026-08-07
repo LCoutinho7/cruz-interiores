@@ -1,5 +1,6 @@
 import React from 'react';
 import { COMPANY_CONTACT } from '../data/mockData';
+import heroBackground from '../assets/hero-background.png';
 
 interface HeroSectionProps {
   onOpenQuoteModal: () => void;
@@ -27,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) =>
         <img
           alt="Projeto de interiores de alto padrão"
           className="object-cover w-full h-full"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJbysuxgHXVtBu9gkVvSFgrljg4TOTW0ChtKELHMSSD14qtNVW3M_y2-le2BCnSqooJz8FW46dzzfRnQZbSWGdf2v2w01X9O632AzgkImOItm3oYRWymI_70atV22_CEIOLltu7E0Q-D9JwrJj0aUEEEAuwD_rAHhIXwq5JFmI1lDxQs7xyBV8IG8iADGqgcY55Q_DAItGzfUL20orBo0bHeevJTty9d1D4qg3bKKniiEOwb5dUro"
+          src={heroBackground}
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[#0B1F45]/60"></div>
