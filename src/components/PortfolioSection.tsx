@@ -54,7 +54,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
         layout
         className="masonry-grid"
       >
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence>
           {filteredItems.map((item) => (
             <motion.div
               layout
