@@ -99,6 +99,7 @@ export const TestimonialsSection: React.FC = () => {
                       <img
                         src={item.projectImage}
                         alt={item.projectTitle || 'Projeto Realizado'}
+                        loading="lazy"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
                     )}

@@ -58,6 +58,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   <img
                     src={service.imageUrl}
                     alt={service.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPANY_CONTACT } from '../data/mockData';
-import heroBackground from '../assets/hero-background.png';
+import heroBackground from '../assets/images/hero-background.webp';
 
 interface HeroSectionProps {
   onOpenQuoteModal: () => void;
@@ -29,6 +29,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenQuoteModal }) =>
           alt="Projeto de interiores de alto padrão"
           className="object-cover w-full h-full"
           src={heroBackground}
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-[#0B1F45]/60"></div>

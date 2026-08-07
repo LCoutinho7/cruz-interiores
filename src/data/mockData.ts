@@ -1,4 +1,16 @@
 import { PortfolioItem, ServiceItem, TestimonialItem, FaqItem } from '../types';
+import portfolioResidenciaAlpha from '../assets/images/portfolio-residencia-alpha.webp';
+import portfolioEscritorioJuridico from '../assets/images/portfolio-escritorio-juridico.webp';
+import portfolioApartamentoVista from '../assets/images/portfolio-apartamento-vista.webp';
+import portfolioSuiteMaster from '../assets/images/portfolio-suite-master.webp';
+import portfolioPapelParedeBotanico from '../assets/images/portfolio-papel-parede-botanico.webp';
+import portfolioEspelhosSancasLounge from '../assets/images/portfolio-espelhos-sancas-lounge.webp';
+import serviceMockPapelDeParede from '../assets/images/service-papel-de-parede.webp';
+import serviceAdesivosPersonalizados from '../assets/images/service-adesivos-personalizados.webp';
+import serviceSancas from '../assets/images/service-sancas.webp';
+import serviceDrywall from '../assets/images/service-drywall.webp';
+import servicePersianas from '../assets/images/service-persianas.webp';
+import testimonialMarianaCosta from '../assets/images/testimonial-mariana-costa.webp';
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
@@ -7,7 +19,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Curitiba, PR',
     category: 'Residencial',
     typeLabel: 'Residencial',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAgYPUqBACva1ADA4i3sHKEKf_pJ_FL9ST5LO7JAqgoG-yfEZTnxtZ1unWyJ9wDv5dJFUehYQ1t7SitBiqihG4n_iTxpHUbjNDp5DqKcwLw2wQNQwt59ZmX4q93bCEl7xcL78Q02sv8kXhV_YyhT3RqL5NFoNnhixhVcH05fm0vScw_w2bRE9zfdnCPueGJnTTqDlqWSoNGGlcarf03RSge9s18iQguqkGZOjfnx3pGu6O7ZCcgSRAB',
+    imageUrl: portfolioResidenciaAlpha,
     aspectRatio: 'aspect-[4/3]',
     description: 'Sala de estar moderna de alto padrão com sofá bege minimalista, mesa de centro em mármore de baixo perfil, painéis de madeira nobre e iluminação embutida valorizando a luz natural.',
     year: '2024',
@@ -19,7 +31,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'São Paulo, SP',
     category: 'Comercial',
     typeLabel: 'Comercial',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAX1TcaRkRLaR_2NCgo6tEj6wPN0Q792yzmNIvuDpy7wrHIL6_cVXibB5GNSv-PBmfObH5Udrzhi0W6II5dhDR9GHj-LA0FgX8ov25Riucdq_s3HSyvzSnJ-DG8cpaIuMAGlCKNdM1G5pH7bIMuXp7_BpqrZ8SBt2EzLI_ybvmVclVB72USw7_X8nk7qHWLddzjaS8FC72zHmh84bMCSqOOSnciJdvP1bi8IueAb7sGOh_WBsjcYn4N',
+    imageUrl: portfolioEscritorioJuridico,
     aspectRatio: 'aspect-[3/4]',
     description: 'Escritório executivo corporativo de luxo. Ampla mesa em nogueira escura, painéis de madeira escovada, estantes retroiluminadas e atmosfera de autoridade e acolhimento.',
     year: '2024',
@@ -31,7 +43,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Balneário Camboriú, SC',
     category: 'Residencial',
     typeLabel: 'Residencial',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAfGV24mAIFa_hYfiW-UM0pc8e-3eflvpKX6Sxj6oaaaQ5Bf_DPQRvZYYLMk_9ixKqOg5wAMJX-ACaIeLm8ZxvqBhJyxi7vQXfXED46EAiBYBgUHfI1z2WOR39HL5Y98zVfHViSjK5tY_TOme1NtsvtGFc5gxKuP3VkpyrW_r-JSaaRfjv7jIhAPQ_NjoTcJ_6P5WcZleQcdjjRYz0ODGhO_Ya705DHO7hUGeIG2H30nQ-6N4iUWMDn',
+    imageUrl: portfolioApartamentoVista,
     aspectRatio: 'aspect-[1/1]',
     description: 'Cozinha integrada minimalista e elegante com ilha central em quartzo branco com veios sutis, armários sem puxadores aparentes e iluminação pendente discreta.',
     year: '2023',
@@ -43,7 +55,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Curitiba, PR',
     category: 'Residencial',
     typeLabel: 'Residencial',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBh5yZCZyJtDg-fh9dXpJQQsW8DiX6Ya8XKuxrZtwPLTHZFv54pSAhdXxoF8mbH9F2dAE5TtWVkeBuWaL13Q7aFmVVlBNggtBJEP-SZcAesaR1l0OkJglV0feQa3aO_G7KmE0lS8Ljlak3O-yW4vr2YoCJFZJZHszDbHWrg1b8fjYGhNfnI04S7KyZjTEjLysDr_51PZts7_MW6xZ-HpocO8JvupseufYZ13AgS6igSDW4cHTAZumNZ',
+    imageUrl: portfolioSuiteMaster,
     aspectRatio: 'aspect-[4/5]',
     description: 'Design de quarto principal sereno e luxuoso. Cabeceira estofada aveludada em tom azul marinho profundo ancorada contra parede branca com boiseries delicadas.',
     year: '2024',
@@ -55,7 +67,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Curitiba, PR',
     category: 'Papel de Parede',
     typeLabel: 'Papel de Parede',
-    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: portfolioPapelParedeBotanico,
     aspectRatio: 'aspect-[4/3]',
     description: 'Papel de parede vinílico texturizado sob medida com estampa botânica sutil em tons terrosos e azul ardósia, instalado com encaixe perfeito de estampas.',
     year: '2024',
@@ -67,7 +79,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     location: 'Curitiba, PR',
     category: 'Espelhos & Sancas',
     typeLabel: 'Espelhos & Sancas',
-    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: portfolioEspelhosSancasLounge,
     aspectRatio: 'aspect-[3/4]',
     description: 'Composição de espelhos bisotados bronze com iluminação indireta em sanca invertida de gesso drywall, gerando sensação de amplitude e luxo.',
     year: '2023',
@@ -83,7 +95,7 @@ export const SERVICES: ServiceItem[] = [
     badgeColor: 'blue',
     description: 'Amplo catálogo de papéis de parede nacionais e importados. Transforme texturas e cores de forma limpa e sofisticada.',
     icon: 'wallpaper',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-AJqt5bTQ6GMYLSVAJ6rO371p4C31cLQLk-3m7yxw5wNihgSAo8F3n6-5FOe9C0x5LKxewY5q9XBmLPs907nGjyEeB8-ln3ExfDlgagVTsrcptm8jKNNlmWcsjYuVNN-bv4_x-A_6d_tQWkCFBcpKatdwf05_vgz00QN0YAv3oChvEpWaiUbNGBm8-MXUyJ0T_m-wyqevq4w9X9rmJ-wFgz-oQK0kQrCSjS_lrDjl8YryvZhBVzlh',
+    imageUrl: serviceMockPapelDeParede,
     details: [
       'Texturas exclusivas e estampas personalizadas sob medida',
       'Material vinílico lavável de alta durabilidade',
@@ -98,7 +110,7 @@ export const SERVICES: ServiceItem[] = [
     badgeColor: 'blue',
     description: 'Soluções criativas em adesivação para ambientes residenciais e corporativos. Personalização total do seu espaço.',
     icon: 'format_paint',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHM2refs7ObEuPHhd8Xx0mOA-50OiPqNb37jlqAOSnwPNHlLuLCPgIH1FMmzcGUOBP0P5UPTCLFlzLrZmpgasEbLuekHCY5-PjQtlQPxVqFCw1rPolJpqKZ63fmzh1rT9XIj6i9MMiM0zVvE1duxK9jVwQFfjXy7FP50HlXPaGknhVHETKuiw4gslK87D7ewEcVFOmhcdKk2JPwkJmTWwluOOkJTXAuAikAmWpICv3wWeyeHJuLKQ4',
+    imageUrl: serviceAdesivosPersonalizados,
     details: [
       'Impressão ecológica de alta definição e pigmentação vibrante',
       'Aplicação em paredes, portas, armários e superfícies lisas',
@@ -113,7 +125,7 @@ export const SERVICES: ServiceItem[] = [
     badgeColor: 'navy',
     description: 'Acabamentos em gesso e isopor (EPS) de alto padrão. Detalhes que valorizam a iluminação e a arquitetura do ambiente.',
     icon: 'light',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBbmTkkc6J_FI0Rz2xX0o_lZ7A6W7jtGzblHnzsOKLycujCk9NHIJS2QmmJj_IhFDO6XLa294nTslX2_DIBTIgAPCj81T1-4Jmi4JixUx2cXKjbEQ_ba9VojhVtbhTSvD4GLFfnRctv_x5AIoGi8oARuNFgomQvmEnVy47qfMYSF8cVTVFQGbFJsGrijBdfBvRP2MaxA56qlynP6hTR6vAtghIvsyEFPflgTJSF7doYsEKRB4Vhnp5o',
+    imageUrl: serviceSancas,
     details: [
       'Sancas abertas, fechadas ou invertidas sob medida',
       'Infraestrutura para fitas LED e spots direcionais',
@@ -128,7 +140,7 @@ export const SERVICES: ServiceItem[] = [
     badgeColor: 'navy',
     description: 'Estruturas de gesso acartonado para divisórias, forros acústicos e nichos arquitetônicos com agilidade e limpeza na obra.',
     icon: 'grid_view',
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: serviceDrywall,
     details: [
       'Paredes divisórias acústicas e térmicas',
       'Forros rebaixados e nichos estruturados',
@@ -143,7 +155,7 @@ export const SERVICES: ServiceItem[] = [
     badgeColor: 'navy',
     description: 'Projetos de espelhos lapidados, bisotados, bronze ou fumê instalados para ampliar visualmente e trazer sofisticação ao ambiente.',
     icon: 'aspect_ratio',
-    imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: portfolioEspelhosSancasLounge,
     details: [
       'Espelhos de 4mm a 6mm das melhores marcas (Cebrace/Guardian)',
       'Acabamento lapidado reta ou bisotado elegante',
@@ -158,7 +170,7 @@ export const SERVICES: ServiceItem[] = [
     badgeColor: 'navy',
     description: 'Controle de luminosidade, privacidade e conforto térmico com persianas motorizadas ou manuais de alto padrão.',
     icon: 'blinds',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+    imageUrl: servicePersianas,
     details: [
       'Modelos Rolo, Romana, Rolô Blackout e Painel',
       'Tecidos solares (Screen 1%, 3%, 5%) e decorativos',
@@ -178,7 +190,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     projectTitle: 'Residência Cruz — Living & Iluminação',
     projectCategory: 'Sancas, Iluminação Cênica & Marcenaria',
-    projectImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrqL7RLGk4Hzs4MHWF2YGVOZMeIVTLtN4kTiRP_2mm5AusK1MFvVhls6cZAOxNb-vAYLGU3SVgCu2WFTEyw1hhUVrUg42ZqwmLgEozrLZWO1QvuecWrIflehOIHHk24euqiXLaiXCuVy7UVvD8GiZWeSdctOuJtenp4H2oGFL0bZeXgjHADo77a4t-jOo5204UskrNMXM421cDgo9zJKS4v4stlcwqPKMkgTsYlWjYeTWC6OZndHKf'
+    projectImage: testimonialMarianaCosta
   },
   {
     id: 'roberto-almeida',
@@ -189,7 +201,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     projectTitle: 'Sede Corporativa Almeida Assoc.',
     projectCategory: 'Adesivos Corporativos & Divisórias Drywall',
-    projectImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHM2refs7ObEuPHhd8Xx0mOA-50OiPqNb37jlqAOSnwPNHlLuLCPgIH1FMmzcGUOBP0P5UPTCLFlzLrZmpgasEbLuekHCY5-PjQtlQPxVqFCw1rPolJpqKZ63fmzh1rT9XIj6i9MMiM0zVvE1duxK9jVwQFfjXy7FP50HlXPaGknhVHETKuiw4gslK87D7ewEcVFOmhcdKk2JPwkJmTWwluOOkJTXAuAikAmWpICv3wWeyeHJuLKQ4'
+    projectImage: serviceAdesivosPersonalizados
   },
   {
     id: 'helena-santos',
@@ -200,7 +212,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     rating: 5,
     projectTitle: 'Penthouse Balneário — Suíte & Living',
     projectCategory: 'Papel de Parede Vinílico & Espelhos Bisotados',
-    projectImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-AJqt5bTQ6GMYLSVAJ6rO371p4C31cLQLk-3m7yxw5wNihgSAo8F3n6-5FOe9C0x5LKxewY5q9XBmLPs907nGjyEeB8-ln3ExfDlgagVTsrcptm8jKNNlmWcsjYuVNN-bv4_x-A_6d_tQWkCFBcpKatdwf05_vgz00QN0YAv3oChvEpWaiUbNGBm8-MXUyJ0T_m-wyqevq4w9X9rmJ-wFgz-oQK0kQrCSjS_lrDjl8YryvZhBVzlh'
+    projectImage: serviceMockPapelDeParede
   }
 ];
 

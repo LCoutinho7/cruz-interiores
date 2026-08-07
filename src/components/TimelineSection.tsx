@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PROCESS_STEPS } from '../data/mockData';
+import timelineBriefing from '../assets/images/timeline-briefing.webp';
+import timelineProducao from '../assets/images/timeline-producao.webp';
 
 export const TimelineSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -136,8 +138,9 @@ export const TimelineSection: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 gsap-stagger">
         <div className="group relative rounded-xl overflow-hidden shadow-sm border border-[#E9ECEF] h-80 bg-white">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWngmrCOWizoESmf-ldmCJbAljCjjnYvHT7ZJYstvL6-8aNb1mKCGkC5DVHK__ZVPziIphw1jKVkrygaiPNoMWlwQdrLvWekrujuSuidy8iNyFwjHnhPp2f5KqP3av12oOELgBcawxR-NkDTg6E0wQ92DCRgROaEmAudSuY8M2EN8bVPNq8GZX1Nf7ERIDHqxrBZuzKAAqy0oV60JXz58n-Yxn3ViviT1oBGCr0r2ZiSHLk5hMEhTU"
+            src={timelineBriefing}
             alt="Designer e arquiteto revisando projeto executivo"
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
@@ -152,8 +155,9 @@ export const TimelineSection: React.FC = () => {
 
         <div className="group relative rounded-xl overflow-hidden shadow-sm border border-[#E9ECEF] h-80 bg-white">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-IMFWIQp7Cw08pUVJMFM5xofA--QooJ1LK3mR8CmrLls_78Rk4gXyVWtIabJONk3lrSRr0sGvzwNyaOFRT9x5WMKI3-mcZyM4p3fXhN9DiobYpNZ1NUxwg2_6BOQWgt5h3BXkkCzUX_xa59xswjD3eaM3W67K_mSBwY9q2_uq7KQEFMh88LDMCJ1e-eWn_Nh5wxLFrJfRBZzZ2wMHUm0Sqpyz1CVTHKXvNYth5ovJ-B77Z8DicwdS"
+            src={timelineProducao}
             alt="Ambiente finalizado com móveis e marcenaria de alto padrão"
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
