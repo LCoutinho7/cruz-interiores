@@ -101,7 +101,7 @@ const ScrollExpandMedia = ({
         {/* overflow-hidden lives here (on the sticky element itself), never on an
             ancestor — overflow-hidden on an ancestor of a position:sticky element
             breaks its ability to unstick when scrolled past. */}
-        <section className="sticky top-0 h-[100dvh] overflow-hidden flex flex-col items-center justify-start">
+        <section className="sticky top-0 h-[100dvh] overflow-hidden flex flex-col items-center justify-start bg-[var(--color-primary)]">
           <motion.div
             className="absolute inset-0 z-0 h-full"
             initial={{ opacity: 0 }}
