@@ -112,7 +112,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
       {/* Ver mais no Instagram Button */}
       <div className="mt-16 text-center">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/cruzart_interiores/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[var(--color-secondary)] text-[var(--color-on-surface)] rounded font-button text-sm font-semibold hover:bg-[var(--color-secondary)] hover:text-[var(--color-on-secondary)] transition-colors group"

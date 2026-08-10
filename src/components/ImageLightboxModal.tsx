@@ -90,10 +90,12 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
             <div className="pt-4 border-t border-[var(--color-outline-variant)] space-y-2">
               <button
                 onClick={handleWhatsAppSimilar}
-                className="w-full py-3.5 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded transition-colors flex items-center justify-center gap-2"
+                className="btn-draw w-full py-3.5 text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded"
               >
-                <Send size={16} />
-                <span>Solicitar Projeto Similar</span>
+                <span className="flex items-center justify-center gap-2">
+                  <Send size={16} />
+                  <span>Solicitar Projeto Similar</span>
+                </span>
               </button>
             </div>
           </div>

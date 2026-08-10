@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/cruzart_interiores/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-full bg-white/10 text-white hover:bg-[var(--color-secondary)] hover:text-[var(--color-on-secondary)] transition-colors"

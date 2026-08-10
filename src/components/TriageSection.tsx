@@ -67,10 +67,12 @@ export const TriageSection: React.FC<TriageSectionProps> = ({ onOpenQuoteModal }
           <div className="pt-4 border-t border-[var(--color-outline-variant)] flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => handleWhatsAppSelect('instalacao')}
-              className="w-full py-3.5 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded transition-colors flex items-center justify-center gap-2 group-hover:bg-[var(--color-secondary-fixed-dim)]"
+              className="btn-draw w-full py-3.5 text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded"
             >
-              <span>Quero projeto completo</span>
-              <ArrowRight size={16} />
+              <span className="flex items-center justify-center gap-2">
+                <span>Quero projeto completo</span>
+                <ArrowRight size={16} />
+              </span>
             </button>
           </div>
         </div>

@@ -161,3 +161,91 @@
     height: 100%;
   }
 }
+
+/* Gold CTA "corner-draw" hover: solid gold fill recedes into a drawn outline
+   on hover (neumorphic edge lighting), adapted from the client-supplied
+   .btn-7 reference to the brand's gold/charcoal tokens. */
+.btn-draw {
+  --btn-draw-hover-text: var(--color-on-surface);
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(0deg, var(--color-secondary-fixed-dim) 0%, var(--color-secondary) 100%);
+  transition: background-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.btn-draw > span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-draw::before,
+.btn-draw::after,
+.btn-draw > span::before,
+.btn-draw > span::after {
+  content: '';
+  position: absolute;
+  background: var(--color-secondary);
+  box-shadow:
+    -7px -7px 20px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 5px 0 rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0 rgba(10, 10, 10, 0.18),
+    4px 4px 5px 0 rgba(10, 10, 10, 0.25);
+  transition: all 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-draw::before {
+  right: 0;
+  bottom: 0;
+  height: 0%;
+  width: 2px;
+}
+
+.btn-draw::after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+}
+
+.btn-draw > span::before {
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 0%;
+}
+
+.btn-draw > span::after {
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 0%;
+}
+
+.btn-draw:hover {
+  background: transparent;
+  color: var(--btn-draw-hover-text);
+}
+
+.btn-draw:hover::before,
+.btn-draw:hover > span::before {
+  height: 100%;
+}
+
+.btn-draw:hover::after,
+.btn-draw:hover > span::after {
+  width: 100%;
+}
+
+/* Use on gold buttons that sit on dark sections (e.g. FinalCtaSection),
+   where gold hover text keeps AA contrast; the default targets light
+   surfaces, where hover text stays dark for the same reason. */
+.btn-draw--dark {
+  --btn-draw-hover-text: var(--color-secondary);
+}

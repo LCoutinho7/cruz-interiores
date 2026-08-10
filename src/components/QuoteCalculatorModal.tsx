@@ -209,10 +209,12 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-4 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold transition-all shadow-md flex items-center justify-center gap-2"
+              className="btn-draw w-full py-4 text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold shadow-md"
             >
-              <Send size={18} />
-              <span>Gerar Proposta e Enviar no WhatsApp</span>
+              <span className="flex items-center justify-center gap-2">
+                <Send size={18} />
+                <span>Gerar Proposta e Enviar no WhatsApp</span>
+              </span>
             </button>
             <p className="text-[11px] text-center text-[var(--color-outline)] mt-2">
               Seus dados estão protegidos e serão utilizados apenas para este atendimento.
