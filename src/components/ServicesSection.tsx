@@ -11,16 +11,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const [selectedServiceModal, setSelectedServiceModal] = useState<ServiceItem | null>(null);
 
   return (
-    <section id="servicos" className="py-20 md:py-28 bg-[#f8f9fa] border-t border-[#E9ECEF] px-6 md:px-8">
+    <section id="servicos" className="py-20 md:py-28 bg-[var(--color-surface)] border-t border-[var(--color-outline-variant)] px-6 md:px-8">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 gsap-reveal">
-          <span className="font-label-caps text-xs text-[#1E56C8] uppercase tracking-widest block mb-3 font-semibold">
+          <span className="font-label-caps text-xs text-[var(--color-on-surface-variant)] uppercase tracking-widest block mb-3 font-semibold">
             Nossos Serviços
           </span>
-          <h2 className="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-4xl text-[#000820] mb-4 font-bold">
+          <h2 className="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-4xl text-[var(--color-on-surface)] mb-4 font-bold">
             Soluções completas para transformar cada detalhe do seu espaço
           </h2>
-          <p className="font-body-lg text-base md:text-lg text-[#44464e]">
+          <p className="font-body-lg text-base md:text-lg text-[var(--color-on-surface-variant)]">
             Compre online para todo o Brasil ou contrate a execução completa com instalação na Região Metropolitana de Curitiba.
           </p>
         </div>
@@ -34,23 +34,23 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             return (
               <div
                 key={service.id}
-                className="group bg-white rounded-lg border border-[#E9ECEF] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative"
+                className="group bg-white rounded-lg border border-[var(--color-outline-variant)] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full relative"
               >
                 {/* Image Header */}
                 <div className="h-48 md:h-64 overflow-hidden relative">
                   <div className="absolute top-4 left-4 z-10 flex gap-2 flex-wrap">
                     {hasCuritiba && (
-                      <span className="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-xs text-[#000820] border border-[#c5c6cf] shadow-sm font-semibold">
+                      <span className="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-xs text-[var(--color-on-surface)] border border-[var(--color-outline-variant)] shadow-sm font-semibold">
                         Curitiba (instalação)
                       </span>
                     )}
                     {hasBrasil && (
-                      <span className="bg-[#000820]/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-xs text-white border border-[#000820] shadow-sm font-semibold">
+                      <span className="bg-[var(--color-primary)]/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-xs text-white border border-[var(--color-primary)] shadow-sm font-semibold">
                         Brasil (venda)
                       </span>
                     )}
                     {!hasBrasil && !service.scopeBadge.includes('instalação') && (
-                      <span className="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-xs text-[#000820] border border-[#c5c6cf] shadow-sm font-semibold">
+                      <span className="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-xs text-[var(--color-on-surface)] border border-[var(--color-outline-variant)] shadow-sm font-semibold">
                         Curitiba e região
                       </span>
                     )}
@@ -65,23 +65,23 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                 {/* Content Body */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-headline-md text-2xl text-[#000820] mb-3">
+                  <h3 className="font-headline-md text-2xl text-[var(--color-on-surface)] mb-3">
                     {service.title}
                   </h3>
-                  <p className="font-body-md text-sm text-[#44464e] mb-6 flex-grow leading-relaxed">
+                  <p className="font-body-md text-sm text-[var(--color-on-surface-variant)] mb-6 flex-grow leading-relaxed">
                     {service.description}
                   </p>
 
                   <div className="mt-auto flex items-center gap-3">
                     <button
                       onClick={() => onSelectServiceForQuote(service.title)}
-                      className="flex-1 py-3 border-[1.5px] border-[#000820] text-[#000820] font-button text-xs font-semibold rounded hover:bg-[#000820] hover:text-white transition-colors text-center cursor-pointer"
+                      className="flex-1 py-3 border-[1.5px] border-[var(--color-on-surface)] text-[var(--color-on-surface)] font-button text-xs font-semibold rounded hover:bg-[var(--color-on-surface)] hover:text-white transition-colors text-center cursor-pointer"
                     >
                       Solicitar orçamento
                     </button>
                     <button
                       onClick={() => setSelectedServiceModal(service)}
-                      className="p-3 text-[#44464e] hover:text-[#1E56C8] border border-[#c5c6cf] hover:border-[#1E56C8] rounded transition-colors cursor-pointer"
+                      className="p-3 text-[var(--color-on-surface-variant)] hover:text-[var(--color-on-surface)] border border-[var(--color-outline-variant)] hover:border-[var(--color-secondary)] rounded transition-colors cursor-pointer"
                       title="Saber mais"
                       aria-label={`Ver detalhes de ${service.title}`}
                     >
@@ -101,38 +101,38 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           <div className="bg-white rounded-xl max-w-lg w-full p-8 relative shadow-2xl animate-scaleUp">
             <button
               onClick={() => setSelectedServiceModal(null)}
-              className="absolute top-4 right-4 p-2 text-[#75777f] hover:text-[#000820] rounded-full hover:bg-[#f3f4f5]"
+              className="absolute top-4 right-4 p-2 text-[var(--color-outline)] hover:text-[var(--color-on-surface)] rounded-full hover:bg-[var(--color-surface-container-low)]"
             >
               <X size={20} />
             </button>
 
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-[#0b1f45] text-white flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center">
                 <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 0" }}>
                   {selectedServiceModal.icon}
                 </span>
               </div>
-              <span className="text-xs font-bold px-3 py-1 bg-[#d9e2ff] text-[#001849] rounded-full uppercase tracking-wider">
+              <span className="text-xs font-bold px-3 py-1 bg-[var(--color-secondary-container)] text-[var(--color-on-surface)] rounded-full uppercase tracking-wider">
                 {selectedServiceModal.scopeBadge}
               </span>
             </div>
 
-            <h3 className="font-headline-md text-2xl text-[#000820] mb-3">
+            <h3 className="font-headline-md text-2xl text-[var(--color-on-surface)] mb-3">
               {selectedServiceModal.title}
             </h3>
 
-            <p className="font-body-md text-sm text-[#44464e] mb-6 leading-relaxed">
+            <p className="font-body-md text-sm text-[var(--color-on-surface-variant)] mb-6 leading-relaxed">
               {selectedServiceModal.description}
             </p>
 
-            <h4 className="font-headline-md text-sm font-semibold text-[#000820] mb-3 uppercase tracking-wider">
+            <h4 className="font-headline-md text-sm font-semibold text-[var(--color-on-surface)] mb-3 uppercase tracking-wider">
               Destaques e Vantagens Técnicas:
             </h4>
 
             <ul className="space-y-3 mb-8">
               {selectedServiceModal.details.map((detail, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-[#191c1d]">
-                  <Check size={18} className="text-[#1f57c9] shrink-0 mt-0.5" />
+                <li key={i} className="flex items-start gap-3 text-sm text-[var(--color-on-surface)]">
+                  <Check size={18} className="text-[var(--color-secondary)] shrink-0 mt-0.5" />
                   <span>{detail}</span>
                 </li>
               ))}
@@ -144,7 +144,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 setSelectedServiceModal(null);
                 onSelectServiceForQuote(serviceTitle);
               }}
-              className="w-full py-4 bg-[#1f57c9] hover:bg-[#1E56C8] text-white font-button text-sm rounded font-semibold transition-colors flex items-center justify-center gap-2"
+              className="w-full py-4 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold transition-colors flex items-center justify-center gap-2"
             >
               <span>Solicitar proposta para {selectedServiceModal.title}</span>
               <ArrowRight size={16} />

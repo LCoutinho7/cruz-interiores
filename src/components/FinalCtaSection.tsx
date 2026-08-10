@@ -9,18 +9,18 @@ interface FinalCtaSectionProps {
 export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteModal }) => {
   const openWhatsApp = () => {
     window.open(
-      `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de conversar com a equipe técnica da Cruz Interiores sobre o meu projeto.')}`,
+      `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de conversar com a equipe técnica da Cruz & Art Interiores sobre o meu projeto.')}`,
       '_blank'
     );
   };
 
   return (
-    <section id="contato" className="py-20 md:py-28 bg-[#000820] text-white px-6 md:px-8 relative overflow-hidden">
+    <section id="contato" className="py-20 md:py-28 bg-[var(--color-primary)] text-white px-6 md:px-8 relative overflow-hidden">
       {/* Background Subtle Gradient Glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#1f57c9]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-secondary)]/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-[1000px] mx-auto text-center relative z-10 gsap-scale-up">
-        <span className="font-label-caps text-xs text-[#5e8bff] uppercase tracking-widest block mb-4">
+        <span className="font-label-caps text-xs text-[var(--color-secondary)] uppercase tracking-widest block mb-4">
           Pronto para Transformar Seu Espaço?
         </span>
 
@@ -28,14 +28,14 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteMod
           Sua ideia com acabamento profissional e a segurança de quem tem 30 anos de história.
         </h2>
 
-        <p className="font-body-lg text-base md:text-xl text-[#e1e3e4] leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="font-body-lg text-base md:text-xl text-[var(--color-secondary-container)] leading-relaxed max-w-2xl mx-auto mb-10">
           Converse com nossos especialistas sem compromisso. Avaliamos a sua planta, indicamos as melhores opções de materiais e apresentamos um orçamento transparente.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
           <button
             onClick={openWhatsApp}
-            className="w-full sm:w-auto px-8 py-4 bg-[#1f57c9] hover:bg-[#1E56C8] text-white font-button text-sm font-semibold rounded transition-all shadow-lg shadow-[#1f57c9]/30 flex items-center justify-center gap-3 hover:-translate-y-0.5"
+            className="w-full sm:w-auto px-8 py-4 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-sm font-semibold rounded transition-all shadow-lg shadow-[var(--color-secondary)]/30 flex items-center justify-center gap-3 hover:-translate-y-0.5"
           >
             <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
               chat
@@ -53,13 +53,13 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteMod
         </div>
 
         {/* Microcopy Trust Badges */}
-        <div className="flex flex-wrap justify-center items-center gap-8 text-xs text-[#7687b3]">
+        <div className="flex flex-wrap justify-center items-center gap-8 text-xs text-[var(--color-on-primary-container)]">
           <div className="flex items-center gap-2">
-            <ShieldCheck size={16} className="text-[#5e8bff]" />
+            <ShieldCheck size={16} className="text-[var(--color-secondary)]" />
             <span>Garantia de até 5 Anos em Projetos</span>
           </div>
           <div className="flex items-center gap-2">
-            <Clock size={16} className="text-[#5e8bff]" />
+            <Clock size={16} className="text-[var(--color-secondary)]" />
             <span>Resposta Média em até 1 Hora Comercial</span>
           </div>
         </div>

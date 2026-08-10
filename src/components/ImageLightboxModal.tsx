@@ -17,7 +17,7 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
   if (!item) return null;
 
   const handleWhatsAppSimilar = () => {
-    const text = `Olá! Vi o projeto "${item.title}" (${item.location}) no portfólio da Cruz Interiores e gostaria de solicitar uma proposta similar para o meu espaço.`;
+    const text = `Olá! Vi o projeto "${item.title}" (${item.location}) no portfólio da Cruz & Art Interiores e gostaria de solicitar uma proposta similar para o meu espaço.`;
     window.open(`https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -47,38 +47,38 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
           <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-between bg-white">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <span className="px-3 py-1 bg-[#d9e2ff] text-[#001849] rounded-full text-[11px] font-bold uppercase tracking-wider">
+                <span className="px-3 py-1 bg-[var(--color-secondary-container)] text-[var(--color-on-surface)] rounded-full text-[11px] font-bold uppercase tracking-wider">
                   {item.typeLabel}
                 </span>
                 {item.year && (
-                  <span className="text-xs text-[#75777f] flex items-center gap-1">
+                  <span className="text-xs text-[var(--color-outline)] flex items-center gap-1">
                     <Calendar size={12} /> {item.year}
                   </span>
                 )}
               </div>
 
-              <h3 className="font-headline-md text-2xl text-[#000820] mb-2 font-bold">
+              <h3 className="font-headline-md text-2xl text-[var(--color-on-surface)] mb-2 font-bold">
                 {item.title}
               </h3>
 
-              <p className="font-body-md text-sm text-[#1f57c9] font-medium flex items-center gap-1.5 mb-4">
-                <MapPin size={16} />
+              <p className="font-body-md text-sm text-[var(--color-on-surface)] font-medium flex items-center gap-1.5 mb-4">
+                <MapPin size={16} className="text-[var(--color-secondary)]" />
                 <span>{item.location}</span>
               </p>
 
-              <p className="font-body-md text-sm text-[#44464e] leading-relaxed mb-6">
+              <p className="font-body-md text-sm text-[var(--color-on-surface-variant)] leading-relaxed mb-6">
                 {item.description}
               </p>
 
               {item.features && item.features.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="text-xs font-bold text-[#000820] uppercase tracking-wider mb-3">
+                  <h4 className="text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-3">
                     Elementos e Acabamentos:
                   </h4>
                   <ul className="space-y-2">
                     {item.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-[#191c1d]">
-                        <Check size={14} className="text-[#1f57c9] shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2 text-xs text-[var(--color-on-surface)]">
+                        <Check size={14} className="text-[var(--color-secondary)] shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -87,10 +87,10 @@ export const ImageLightboxModal: React.FC<ImageLightboxModalProps> = ({
               )}
             </div>
 
-            <div className="pt-4 border-t border-[#E9ECEF] space-y-2">
+            <div className="pt-4 border-t border-[var(--color-outline-variant)] space-y-2">
               <button
                 onClick={handleWhatsAppSimilar}
-                className="w-full py-3.5 bg-[#1f57c9] hover:bg-[#1E56C8] text-white font-button text-xs font-semibold rounded transition-colors flex items-center justify-center gap-2"
+                className="w-full py-3.5 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded transition-colors flex items-center justify-center gap-2"
               >
                 <Send size={16} />
                 <span>Solicitar Projeto Similar</span>

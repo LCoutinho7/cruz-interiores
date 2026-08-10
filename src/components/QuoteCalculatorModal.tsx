@@ -28,7 +28,7 @@ export const QuoteCalculatorModal: React.FC<QuoteCalculatorModalProps> = ({
 
     const isCuritibaRegion = city.toLowerCase().includes('curitiba') || city.toLowerCase().includes('pr') || city.toLowerCase().includes('paraná');
 
-    const message = `*SOLICITAÇÃO DE ORÇAMENTO — CRUZ INTERIORES*
+    const message = `*SOLICITAÇÃO DE ORÇAMENTO — CRUZ & ART INTERIORES*
 ----------------------------------------
 *Cliente:* ${name || 'Não informado'}
 *Contato:* ${phone || 'Não informado'}
@@ -51,7 +51,7 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-[#75777f] hover:text-[#000820] rounded-full hover:bg-[#f3f4f5] transition-colors"
+          className="absolute top-4 right-4 p-2 text-[var(--color-outline)] hover:text-[var(--color-on-surface)] rounded-full hover:bg-[var(--color-surface-container-low)] transition-colors"
           aria-label="Fechar formulário"
         >
           <X size={20} />
@@ -59,14 +59,14 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 mb-2">
-          <div className="p-2.5 rounded-lg bg-[#d9e2ff] text-[#0b1f45]">
+          <div className="p-2.5 rounded-lg bg-[var(--color-secondary-container)] text-[var(--color-on-surface)]">
             <Calculator size={22} />
           </div>
           <div>
-            <h3 className="font-headline-md text-2xl text-[#000820] font-bold">
+            <h3 className="font-headline-md text-2xl text-[var(--color-on-surface)] font-bold">
               Simular Orçamento Online
             </h3>
-            <p className="text-xs text-[#44464e]">
+            <p className="text-xs text-[var(--color-on-surface-variant)]">
               Preencha os dados do seu ambiente para receber uma estimativa rápida via WhatsApp.
             </p>
           </div>
@@ -75,7 +75,7 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
         <form onSubmit={handleSubmit} className="mt-6 space-y-6">
           {/* Service Selection */}
           <div>
-            <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
               1. Qual serviço você precisa?
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -94,8 +94,8 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
                   onClick={() => setServiceType(serv)}
                   className={`p-3 rounded-lg text-xs font-semibold text-left transition-all border ${
                     serviceType === serv
-                      ? 'bg-[#0b1f45] text-white border-[#0b1f45] shadow-sm'
-                      : 'bg-[#f8f9fa] text-[#44464e] border-[#c5c6cf]/60 hover:border-[#1f57c9]'
+                      ? 'bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-sm'
+                      : 'bg-[var(--color-surface)] text-[var(--color-on-surface-variant)] border-[var(--color-outline-variant)]/60 hover:border-[var(--color-secondary)]'
                   }`}
                 >
                   {serv}
@@ -107,13 +107,13 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
           {/* Room Type & Area */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
                 2. Tipo de Ambiente
               </label>
               <select
                 value={roomType}
                 onChange={(e) => setRoomType(e.target.value)}
-                className="w-full p-3 rounded-lg border border-[#c5c6cf] text-sm bg-[#f8f9fa] text-[#191c1d] focus:outline-none focus:border-[#1f57c9]"
+                className="w-full p-3 rounded-lg border border-[var(--color-outline-variant)] text-sm bg-[var(--color-surface)] text-[var(--color-on-surface)] focus:outline-none focus:border-[var(--color-secondary)]"
               >
                 <option value="Sala de Estar">Sala de Estar</option>
                 <option value="Quarto / Suíte">Quarto / Suíte</option>
@@ -125,7 +125,7 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
                 3. Área Aproximada (m²): {areaSize} m²
               </label>
               <input
@@ -135,9 +135,9 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
                 step="5"
                 value={areaSize}
                 onChange={(e) => setAreaSize(Number(e.target.value))}
-                className="w-full accent-[#1f57c9] cursor-pointer mt-2"
+                className="w-full accent-[var(--color-secondary)] cursor-pointer mt-2"
               />
-              <div className="flex justify-between text-[11px] text-[#75777f] mt-1">
+              <div className="flex justify-between text-[11px] text-[var(--color-outline)] mt-1">
                 <span>5 m²</span>
                 <span>50 m²</span>
                 <span>100+ m²</span>
@@ -147,7 +147,7 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
 
           {/* Location */}
           <div>
-            <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
               4. Cidade e Estado
             </label>
             <input
@@ -156,14 +156,14 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
               placeholder="Ex: Curitiba, PR ou São Paulo, SP"
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              className="w-full p-3 rounded-lg border border-[#c5c6cf] text-sm bg-[#f8f9fa] text-[#191c1d] focus:outline-none focus:border-[#1f57c9]"
+              className="w-full p-3 rounded-lg border border-[var(--color-outline-variant)] text-sm bg-[var(--color-surface)] text-[var(--color-on-surface)] focus:outline-none focus:border-[var(--color-secondary)]"
             />
           </div>
 
           {/* Contact Details */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
                 Seu Nome
               </label>
               <input
@@ -172,12 +172,12 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
                 placeholder="Como podemos te chamar?"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-3 rounded-lg border border-[#c5c6cf] text-sm bg-[#f8f9fa] text-[#191c1d] focus:outline-none focus:border-[#1f57c9]"
+                className="w-full p-3 rounded-lg border border-[var(--color-outline-variant)] text-sm bg-[var(--color-surface)] text-[var(--color-on-surface)] focus:outline-none focus:border-[var(--color-secondary)]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+              <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
                 Telefone / WhatsApp
               </label>
               <input
@@ -186,14 +186,14 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
                 placeholder="(41) 99999-9999"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full p-3 rounded-lg border border-[#c5c6cf] text-sm bg-[#f8f9fa] text-[#191c1d] focus:outline-none focus:border-[#1f57c9]"
+                className="w-full p-3 rounded-lg border border-[var(--color-outline-variant)] text-sm bg-[var(--color-surface)] text-[var(--color-on-surface)] focus:outline-none focus:border-[var(--color-secondary)]"
               />
             </div>
           </div>
 
           {/* Additional Notes */}
           <div>
-            <label className="block text-xs font-bold text-[#000820] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-[var(--color-on-surface)] uppercase tracking-wider mb-2">
               Observações ou dúvidas específicas (Opcional)
             </label>
             <textarea
@@ -201,7 +201,7 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
               placeholder="Ex: Gostaria de papel de parede impermeável para área gourmet..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full p-3 rounded-lg border border-[#c5c6cf] text-sm bg-[#f8f9fa] text-[#191c1d] focus:outline-none focus:border-[#1f57c9]"
+              className="w-full p-3 rounded-lg border border-[var(--color-outline-variant)] text-sm bg-[var(--color-surface)] text-[var(--color-on-surface)] focus:outline-none focus:border-[var(--color-secondary)]"
             />
           </div>
 
@@ -209,12 +209,12 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-4 bg-[#1f57c9] hover:bg-[#1E56C8] text-white font-button text-sm rounded font-semibold transition-all shadow-md flex items-center justify-center gap-2"
+              className="w-full py-4 bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-fixed-dim)] text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold transition-all shadow-md flex items-center justify-center gap-2"
             >
               <Send size={18} />
               <span>Gerar Proposta e Enviar no WhatsApp</span>
             </button>
-            <p className="text-[11px] text-center text-[#75777f] mt-2">
+            <p className="text-[11px] text-center text-[var(--color-outline)] mt-2">
               Seus dados estão protegidos e serão utilizados apenas para este atendimento.
             </p>
           </div>

@@ -35,7 +35,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f9fa] text-[#191c1d] flex flex-col font-sans selection:bg-[#1f57c9] selection:text-white">
+    <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-on-surface)] flex flex-col font-sans selection:bg-[var(--color-secondary)] selection:text-[var(--color-on-secondary)]">
       {/* Fixed Header — hidden until the hero intro has fully expanded */}
       <Header onOpenQuoteModal={() => handleOpenQuoteModal()} visible={isHeroExpanded} />
 

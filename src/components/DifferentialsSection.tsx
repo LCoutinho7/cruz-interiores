@@ -28,13 +28,13 @@ export const DifferentialsSection: React.FC = () => {
   return (
     <section id="sobre" className="py-20 md:py-28 px-6 md:px-8 max-w-[1200px] mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16 gsap-reveal">
-        <span className="font-label-caps text-xs text-[#1E56C8] uppercase tracking-widest block mb-3 font-semibold">
-          Por que a Cruz Interiores?
+        <span className="font-label-caps text-xs text-[var(--color-on-surface-variant)] uppercase tracking-widest block mb-3 font-semibold">
+          Por que a Cruz & Art Interiores?
         </span>
-        <h2 className="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-4xl text-[#000820] mb-4 font-bold">
+        <h2 className="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-4xl text-[var(--color-on-surface)] mb-4 font-bold">
           O que muda quando você personaliza com quem tem 30 anos de estrada
         </h2>
-        <p className="font-body-lg text-base md:text-lg text-[#44464e]">
+        <p className="font-body-lg text-base md:text-lg text-[var(--color-on-surface-variant)]">
           Compromisso com a estética de alto padrão e com a durabilidade que você usufrui por anos.
         </p>
       </div>
@@ -45,17 +45,17 @@ export const DifferentialsSection: React.FC = () => {
           return (
             <div
               key={index}
-              className="p-8 bg-white border border-[#E9ECEF] rounded-xl shadow-sm hover:border-[#1f57c9]/40 hover:shadow-md transition-all flex items-start gap-6 group"
+              className="p-8 bg-white border border-[var(--color-outline-variant)] rounded-xl shadow-sm hover:border-[var(--color-secondary)]/40 hover:shadow-md transition-all flex items-start gap-6 group"
             >
-              <div className="w-12 h-12 rounded-lg bg-[#d9e2ff] text-[#0b1f45] flex items-center justify-center shrink-0 group-hover:bg-[#1f57c9] group-hover:text-white transition-colors">
+              <div className="w-12 h-12 rounded-lg bg-[var(--color-secondary-container)] text-[var(--color-on-surface)] flex items-center justify-center shrink-0 group-hover:bg-[var(--color-secondary)] group-hover:text-[var(--color-on-secondary)] transition-colors">
                 <Icon size={24} />
               </div>
 
               <div>
-                <h3 className="font-headline-md text-xl text-[#000820] mb-2 font-semibold">
+                <h3 className="font-headline-md text-xl text-[var(--color-on-surface)] mb-2 font-semibold">
                   {item.title}
                 </h3>
-                <p className="font-body-md text-sm md:text-base text-[#44464e] leading-relaxed">
+                <p className="font-body-md text-sm md:text-base text-[var(--color-on-surface-variant)] leading-relaxed">
                   {item.description}
                 </p>
               </div>

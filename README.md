@@ -1,6 +1,6 @@
-# Cruz Interiores
+# Cruz & Art Interiores
 
-Site institucional da Cruz Interiores — React 19 + TypeScript + Vite + Tailwind CSS + GSAP.
+Site institucional da Cruz & Art Interiores — React 19 + TypeScript + Vite + Tailwind CSS + GSAP.
 
 ## Rodando localmente
 

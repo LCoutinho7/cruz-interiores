@@ -4,7 +4,7 @@ import { COMPANY_CONTACT } from '../data/mockData';
 export const MobileFab: React.FC = () => {
   const openWhatsApp = () => {
     window.open(
-      `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Vim pelo site e gostaria de falar com um especialista da Cruz Interiores.')}`,
+      `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Vim pelo site e gostaria de falar com um especialista da Cruz & Art Interiores.')}`,
       '_blank'
     );
   };

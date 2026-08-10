@@ -21,13 +21,13 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
     <section id="projetos" className="py-20 md:py-28 px-6 md:px-8 max-w-[1200px] mx-auto">
       {/* Section Header */}
       <div className="mb-12 text-center max-w-3xl mx-auto gsap-reveal">
-        <span className="font-label-caps text-xs text-[#1E56C8] uppercase tracking-widest block mb-3">
+        <span className="font-label-caps text-xs text-[var(--color-on-surface-variant)] uppercase tracking-widest block mb-3">
           Galeria & Cases
         </span>
-        <h2 className="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-4xl text-[#000820] mb-4">
+        <h2 className="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-4xl text-[var(--color-on-surface)] mb-4">
           Projetos que já transformamos
         </h2>
-        <p className="font-body-lg text-base md:text-lg text-[#44464e]">
+        <p className="font-body-lg text-base md:text-lg text-[var(--color-on-surface-variant)]">
           Explore nossa seleção de projetos recentes. Cada ambiente é pensado meticulosamente para aliar estética de alto padrão e funcionalidade impecável.
         </p>
       </div>
@@ -40,8 +40,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
             onClick={() => setActiveFilter(cat)}
             className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide transition-all cursor-pointer ${
               activeFilter === cat
-                ? 'bg-[#000820] text-white shadow-sm'
-                : 'bg-white text-[#44464e] border border-[#E9ECEF] hover:border-[#1f57c9]'
+                ? 'bg-[var(--color-primary)] text-white shadow-sm'
+                : 'bg-white text-[var(--color-on-surface-variant)] border border-[var(--color-outline-variant)] hover:border-[var(--color-secondary)]'
             }`}
           >
             {cat}
@@ -68,9 +68,9 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
                 scale: { duration: 0.25 },
               }}
               onClick={() => onOpenLightbox(item)}
-              className="masonry-item rounded-xl image-hover-zoom relative group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#E9ECEF] bg-white transition-all hover:shadow-xl overflow-hidden"
+              className="masonry-item rounded-xl image-hover-zoom relative group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[var(--color-outline-variant)] bg-white transition-all hover:shadow-xl overflow-hidden"
             >
-              <div className="relative overflow-hidden rounded-t-xl bg-[#f3f4f5]">
+              <div className="relative overflow-hidden rounded-t-xl bg-[var(--color-surface-container-low)]">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
@@ -80,7 +80,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
 
                 {/* Hover View Overlay */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-4 py-2 bg-white/90 text-[#000820] font-button text-xs font-bold rounded-full flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                  <span className="px-4 py-2 bg-white/90 text-[var(--color-on-surface)] font-button text-xs font-bold rounded-full flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
                     <Eye size={16} />
                     <span>Ver Detalhes do Projeto</span>
                   </span>
@@ -89,18 +89,18 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
 
               <div className="p-6">
                 <div className="flex justify-between items-center mb-3">
-                  <span className="inline-block px-3 py-1 bg-[#e1e3e4] text-[#44464e] rounded-full font-label-caps text-[11px] uppercase tracking-wider">
+                  <span className="inline-block px-3 py-1 bg-[var(--color-surface-container-high)] text-[var(--color-on-surface-variant)] rounded-full font-label-caps text-[11px] uppercase tracking-wider">
                     {item.typeLabel}
                   </span>
-                  {item.year && <span className="text-xs text-[#75777f]">{item.year}</span>}
+                  {item.year && <span className="text-xs text-[var(--color-outline)]">{item.year}</span>}
                 </div>
 
-                <h3 className="font-headline-md text-xl text-[#000820] mb-1 font-semibold group-hover:text-[#1E56C8] transition-colors">
+                <h3 className="font-headline-md text-xl text-[var(--color-on-surface)] mb-1 font-semibold group-hover:text-[var(--color-on-surface)] transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="font-body-md text-sm text-[#44464e] flex items-center gap-1.5">
-                  <MapPin size={14} className="text-[#1f57c9]" />
+                <p className="font-body-md text-sm text-[var(--color-on-surface-variant)] flex items-center gap-1.5">
+                  <MapPin size={14} className="text-[var(--color-secondary)]" />
                   <span>{item.location}</span>
                 </p>
               </div>
@@ -115,7 +115,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenLightb
           href="https://instagram.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#1f57c9] text-[#1f57c9] rounded font-button text-sm font-semibold hover:bg-[#1f57c9] hover:text-white transition-colors group"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[var(--color-secondary)] text-[var(--color-on-surface)] rounded font-button text-sm font-semibold hover:bg-[var(--color-secondary)] hover:text-[var(--color-on-secondary)] transition-colors group"
         >
           <Instagram size={18} />
           <span>Ver mais no Instagram</span>
