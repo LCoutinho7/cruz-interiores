@@ -162,10 +162,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
             Sobre
           </button>
           <button
-            onClick={() => handleNavClick('faq')}
+            onClick={() => handleNavClick('sac')}
             className="block w-full text-left font-body-md text-lg text-[var(--color-on-surface)] py-2 border-b border-[var(--color-outline-variant)]"
           >
-            Dúvidas Frequentes
+            Fale Conosco
           </button>
           <div className="pt-2 flex flex-col gap-3">
             <button

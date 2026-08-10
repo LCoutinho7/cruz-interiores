@@ -70,8 +70,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('faq')} className="hover:text-white transition-colors">
-                  Dúvidas Frequentes (FAQ)
+                <button onClick={() => scrollToSection('sac')} className="hover:text-white transition-colors">
+                  Fale Conosco
                 </button>
               </li>
               <li>

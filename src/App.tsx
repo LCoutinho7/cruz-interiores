@@ -10,7 +10,7 @@ import { TimelineSection } from './components/TimelineSection';
 import { PortfolioSection } from './components/PortfolioSection';
 import { ExpectationsSection } from './components/ExpectationsSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
-import { FaqSection } from './components/FaqSection';
+import { SacSection } from './components/SacSection';
 import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
 import { QuoteCalculatorModal } from './components/QuoteCalculatorModal';
@@ -54,7 +54,7 @@ export default function App() {
         <PortfolioSection onOpenLightbox={(item) => setSelectedLightboxItem(item)} />
         <ExpectationsSection />
         <TestimonialsSection />
-        <FaqSection />
+        <SacSection />
         <FinalCtaSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
       </main>
 
