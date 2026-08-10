@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MessageSquare, Menu, X, PhoneCall } from 'lucide-react';
 import { COMPANY_CONTACT } from '../data/mockData';
+import cruzArtIcon from '../assets/logo/cruz-art-icon.png';
 
 interface HeaderProps {
   onOpenQuoteModal: () => void;
@@ -54,13 +55,20 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex flex-col group cursor-pointer"
+          className="flex items-center gap-3 group cursor-pointer"
         >
-          <span className="font-wordmark text-xl md:text-2xl text-[var(--color-on-surface)] transition-colors">
-            CRUZ <span className="text-[var(--color-secondary)]">&</span> ART
-          </span>
-          <span className="text-[10px] font-semibold text-[var(--color-on-surface-variant)] tracking-widest uppercase -mt-1">
-            30 Anos de Excelência
+          <img
+            src={cruzArtIcon}
+            alt="Cruz & Art Interiores"
+            className="w-9 h-9 md:w-10 md:h-10 rounded-lg shrink-0"
+          />
+          <span className="flex flex-col">
+            <span className="font-wordmark text-xl md:text-2xl text-[var(--color-on-surface)] transition-colors">
+              CRUZ <span className="text-[var(--color-secondary)]">&</span> ART
+            </span>
+            <span className="text-[10px] font-semibold text-[var(--color-on-surface-variant)] tracking-widest uppercase -mt-1">
+              30 Anos de Excelência
+            </span>
           </span>
         </a>
 

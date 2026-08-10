@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { COMPANY_CONTACT } from '../data/mockData';
 import { Phone, Mail, MapPin, Instagram, Shield, X } from 'lucide-react';
+import cruzArtIcon from '../assets/logo/cruz-art-icon.png';
 
 interface FooterProps {
   onOpenQuoteModal: () => void;
@@ -22,9 +23,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand Info */}
           <div>
-            <span className="font-wordmark text-xl text-white block mb-1">
-              CRUZ <span className="text-[var(--color-secondary)]">&</span> ART
-            </span>
+            <div className="flex items-center gap-3 mb-1">
+              <img src={cruzArtIcon} alt="Cruz & Art Interiores" className="w-9 h-9 rounded-lg shrink-0" />
+              <span className="font-wordmark text-xl text-white">
+                CRUZ <span className="text-[var(--color-secondary)]">&</span> ART
+              </span>
+            </div>
             <span className="text-[10px] font-semibold text-[var(--color-on-primary-container)] tracking-widest uppercase block mb-4">
               30 Anos de Excelência em Marcenaria e Design
             </span>
