@@ -67,9 +67,9 @@ export const TriageSection: React.FC<TriageSectionProps> = ({ onOpenQuoteModal }
           <div className="pt-4 border-t border-[var(--color-outline-variant)] flex flex-col sm:flex-row gap-3">
             <button
               onClick={() => handleWhatsAppSelect('instalacao')}
-              className="btn-draw w-full py-3.5 text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded"
+              className="btn-draw w-full text-[var(--color-on-secondary)] font-button text-xs font-semibold rounded"
             >
-              <span className="flex items-center justify-center gap-2">
+              <span className="gap-2 py-3.5">
                 <span>Quero projeto completo</span>
                 <ArrowRight size={16} />
               </span>

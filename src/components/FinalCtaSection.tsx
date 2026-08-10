@@ -35,9 +35,9 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteMod
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
           <button
             onClick={openWhatsApp}
-            className="btn-draw btn-draw--dark w-full sm:w-auto px-8 py-4 text-[var(--color-on-secondary)] font-button text-sm font-semibold rounded shadow-lg shadow-[var(--color-secondary)]/30 hover:-translate-y-0.5 transition-transform"
+            className="btn-draw btn-draw--dark w-full sm:w-auto text-[var(--color-on-secondary)] font-button text-sm font-semibold rounded shadow-lg shadow-[var(--color-secondary)]/30 hover:-translate-y-0.5 transition-transform"
           >
-            <span className="flex items-center justify-center gap-3">
+            <span className="gap-3 px-8 py-4">
               <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
                 chat
               </span>

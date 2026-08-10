@@ -169,10 +169,17 @@
   --btn-draw-hover-text: var(--color-on-surface);
   position: relative;
   isolation: isolate;
+  padding: 0;
   background: linear-gradient(0deg, var(--color-secondary-fixed-dim) 0%, var(--color-secondary) 100%);
   transition: background-color 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
+/* Padding lives on the inner span, not the button: the corner-draw
+   pseudo-elements on the button measure its padding-box, and the ones on
+   this span measure its content-box. With zero padding on .btn-draw those
+   two boxes are identical, so all four growing edges stay the same length
+   instead of the top/left pair coming up short against the bottom/right
+   pair. */
 .btn-draw > span {
   position: relative;
   z-index: 2;
@@ -181,6 +188,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .btn-draw::before,

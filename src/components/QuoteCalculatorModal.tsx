@@ -209,9 +209,9 @@ Vim pelo simulador do site e gostaria de receber um orçamento detalhado.`;
           <div className="pt-2">
             <button
               type="submit"
-              className="btn-draw w-full py-4 text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold shadow-md"
+              className="btn-draw w-full text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold shadow-md"
             >
-              <span className="flex items-center justify-center gap-2">
+              <span className="gap-2 py-4">
                 <Send size={18} />
                 <span>Gerar Proposta e Enviar no WhatsApp</span>
               </span>

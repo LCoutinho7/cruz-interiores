@@ -144,9 +144,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 setSelectedServiceModal(null);
                 onSelectServiceForQuote(serviceTitle);
               }}
-              className="btn-draw w-full py-4 text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold"
+              className="btn-draw w-full text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold"
             >
-              <span className="flex items-center justify-center gap-2">
+              <span className="gap-2 py-4">
                 <span>Solicitar proposta para {selectedServiceModal.title}</span>
                 <ArrowRight size={16} />
               </span>

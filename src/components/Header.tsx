@@ -116,9 +116,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={onOpenQuoteModal}
-            className="btn-draw px-6 py-3 text-[var(--color-on-secondary)] rounded font-button text-sm font-semibold transform active:scale-95 shadow-sm"
+            className="btn-draw text-[var(--color-on-secondary)] rounded font-button text-sm font-semibold transform active:scale-95 shadow-sm"
           >
-            <span>Orçamento</span>
+            <span className="px-6 py-3">Orçamento</span>
           </button>
         </div>
 
@@ -126,9 +126,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={onOpenQuoteModal}
-            className="btn-draw px-4 py-2 text-[var(--color-on-secondary)] rounded font-button text-xs font-semibold"
+            className="btn-draw text-[var(--color-on-secondary)] rounded font-button text-xs font-semibold"
           >
-            <span>Orçamento</span>
+            <span className="px-4 py-2">Orçamento</span>
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -173,9 +173,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
                 setMobileMenuOpen(false);
                 onOpenQuoteModal();
               }}
-              className="btn-draw w-full py-3 text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold text-center"
+              className="btn-draw w-full text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold"
             >
-              <span>Solicitar Orçamento</span>
+              <span className="py-3">Solicitar Orçamento</span>
             </button>
             <button
               onClick={openWhatsApp}
