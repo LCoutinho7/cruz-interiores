@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { SERVICES } from '../data/mockData';
+import { SERVICES, COMPANY_CONTACT } from '../data/mockData';
 import { ServiceItem } from '../types';
 import { Check, ArrowRight, Info, X } from 'lucide-react';
 
-interface ServicesSectionProps {
-  onSelectServiceForQuote: (serviceName: string) => void;
-}
-
-export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServiceForQuote }) => {
+export const ServicesSection: React.FC = () => {
   const [selectedServiceModal, setSelectedServiceModal] = useState<ServiceItem | null>(null);
+
+  const handleWhatsAppQuote = (serviceName: string) => {
+    const text = `Olá! Gostaria de solicitar um orçamento para o serviço de ${serviceName}.`;
+    window.open(`https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
+  };
 
   return (
     <section id="servicos" className="py-20 md:py-28 bg-[var(--color-surface)] border-t border-[var(--color-outline-variant)] px-6 md:px-8">
@@ -74,7 +75,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                   <div className="mt-auto flex items-center gap-3">
                     <button
-                      onClick={() => onSelectServiceForQuote(service.title)}
+                      onClick={() => handleWhatsAppQuote(service.title)}
                       className="flex-1 py-3 border-[1.5px] border-[var(--color-on-surface)] text-[var(--color-on-surface)] font-button text-xs font-semibold rounded hover:bg-[var(--color-on-surface)] hover:text-white transition-colors text-center cursor-pointer"
                     >
                       Solicitar orçamento
@@ -142,7 +143,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
               onClick={() => {
                 const serviceTitle = selectedServiceModal.title;
                 setSelectedServiceModal(null);
-                onSelectServiceForQuote(serviceTitle);
+                handleWhatsAppQuote(serviceTitle);
               }}
               className="btn-draw w-full text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold"
             >

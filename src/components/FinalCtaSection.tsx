@@ -2,14 +2,17 @@ import React from 'react';
 import { ArrowRight, MessageCircle, ShieldCheck, Clock } from 'lucide-react';
 import { COMPANY_CONTACT } from '../data/mockData';
 
-interface FinalCtaSectionProps {
-  onOpenQuoteModal: () => void;
-}
-
-export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteModal }) => {
+export const FinalCtaSection: React.FC = () => {
   const openWhatsApp = () => {
     window.open(
       `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de conversar com a equipe técnica da Cruz & Art Interiores sobre o meu projeto.')}`,
+      '_blank'
+    );
+  };
+
+  const openWhatsAppQuote = () => {
+    window.open(
+      `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento para o meu projeto.')}`,
       '_blank'
     );
   };
@@ -46,10 +49,10 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenQuoteMod
           </button>
 
           <button
-            onClick={onOpenQuoteModal}
+            onClick={openWhatsAppQuote}
             className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-button text-sm font-semibold rounded transition-all flex items-center justify-center gap-2"
           >
-            <span>Simular Orçamento Online</span>
+            <span>Solicitar Orçamento</span>
             <ArrowRight size={16} />
           </button>
         </div>

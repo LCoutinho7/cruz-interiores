@@ -2,15 +2,11 @@ import React from 'react';
 import { Hammer, Truck, ArrowRight, Check } from 'lucide-react';
 import { COMPANY_CONTACT } from '../data/mockData';
 
-interface TriageSectionProps {
-  onOpenQuoteModal: () => void;
-}
-
-export const TriageSection: React.FC<TriageSectionProps> = ({ onOpenQuoteModal }) => {
+export const TriageSection: React.FC = () => {
   const handleWhatsAppSelect = (type: string) => {
     const text = type === 'instalacao'
       ? 'Olá! Gostaria de informações sobre Projeto Completo com Instalação em Curitiba/Região.'
-      : 'Olá! Gostaria de informações sobre Papel de Parede e Adesivo Sob Medida com Envio para o Brasil.';
+      : 'Olá! Gostaria de informações sobre Papel de Parede Sob Medida e Adesivos Decorativos com Envio para o Brasil.';
     window.open(`https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -89,11 +85,11 @@ export const TriageSection: React.FC<TriageSectionProps> = ({ onOpenQuoteModal }
             </div>
 
             <h3 className="font-headline-md text-2xl text-[var(--color-on-surface)] mb-3">
-              Papel de parede e adesivo sob medida
+              Papel de parede sob medida e adesivos decorativos
             </h3>
 
             <p className="font-body-md text-[var(--color-on-surface-variant)] text-sm md:text-base leading-relaxed mb-6">
-              Personalizamos o padrão para a altura e largura exatas da sua parede. Produzimos em vinílico lavável premium e enviamos com kit e gabarito numerado de aplicação para qualquer estado.
+              Personalizamos o papel de parede para a altura e largura exatas da sua parede e oferecemos adesivos decorativos de catálogo. Produzimos em vinílico lavável premium e enviamos com kit e gabarito numerado de aplicação para qualquer estado.
             </p>
 
             <ul className="space-y-3 mb-8">

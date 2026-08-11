@@ -81,9 +81,9 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     typeLabel: 'Espelhos & Sancas',
     imageUrl: portfolioEspelhosSancasLounge,
     aspectRatio: 'aspect-[3/4]',
-    description: 'Composição de espelhos bisotados bronze com iluminação indireta em sanca invertida de gesso drywall, gerando sensação de amplitude e luxo.',
+    description: 'Composição de espelhos bisotados bronze com sanca invertida de gesso drywall, gerando sensação de amplitude e luxo.',
     year: '2023',
-    features: ['Espelhos bisotados de 5mm', 'Sanca invertida de gesso', 'Fita LED 3000K alta fidelidade', 'Acabamento sem emendas']
+    features: ['Espelhos bisotados de 5mm', 'Sanca invertida de gesso', 'Alinhamento e nivelamento a laser', 'Acabamento sem emendas']
   }
 ];
 
@@ -104,32 +104,32 @@ export const SERVICES: ServiceItem[] = [
     ]
   },
   {
-    id: 'adesivos-personalizados',
-    title: 'Adesivos Personalizados',
+    id: 'adesivos-decorativos',
+    title: 'Adesivos Decorativos',
     scopeBadge: 'Curitiba (instalação) · Brasil (venda)',
     badgeColor: 'blue',
-    description: 'Soluções criativas em adesivação para ambientes residenciais e corporativos. Personalização total do seu espaço.',
+    description: 'Catálogo de adesivos decorativos prontos para ambientes residenciais e corporativos, com aplicação profissional e acabamento impecável.',
     icon: 'format_paint',
     imageUrl: serviceAdesivosPersonalizados,
     details: [
-      'Impressão ecológica de alta definição e pigmentação vibrante',
+      'Estampas de catálogo em impressão ecológica de alta definição',
       'Aplicação em paredes, portas, armários e superfícies lisas',
       'Laminação fosca ou brilhante anti-risco',
-      'Corte eletrônico milimétrico de contorno'
+      'Acabamento sem bolhas e sem emendas aparentes'
     ]
   },
   {
     id: 'sancas',
-    title: 'Sancas e Iluminação',
+    title: 'Sancas',
     scopeBadge: 'Curitiba e região',
     badgeColor: 'navy',
-    description: 'Acabamentos em gesso e isopor (EPS) de alto padrão. Detalhes que valorizam a iluminação e a arquitetura do ambiente.',
-    icon: 'light',
+    description: 'Acabamentos em gesso e isopor (EPS) de alto padrão. Detalhes que valorizam a arquitetura do ambiente.',
+    icon: 'design_services',
     imageUrl: serviceSancas,
     details: [
       'Sancas abertas, fechadas ou invertidas sob medida',
-      'Infraestrutura para fitas LED e spots direcionais',
       'Alinhamento a laser e nivelamento preciso',
+      'Acabamento liso pronto para pintura',
       'Integração perfeita com cortineiros embutidos'
     ]
   },
@@ -188,8 +188,8 @@ export const TESTIMONIALS: TestimonialItem[] = [
     location: 'Curitiba, PR',
     initial: 'M',
     rating: 5,
-    projectTitle: 'Residência Cruz — Living & Iluminação',
-    projectCategory: 'Sancas, Iluminação Cênica & Marcenaria',
+    projectTitle: 'Residência Cruz — Living & Sancas',
+    projectCategory: 'Sancas & Marcenaria',
     projectImage: testimonialMarianaCosta
   },
   {
@@ -220,7 +220,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'Vocês atendem fora de Curitiba?',
-    answer: 'Sim! Para papéis de parede e adesivos personalizados, enviamos para todo o Brasil com projeto ajustado às suas medidas e gabarito numerado de aplicação. Para projetos completos com instalação (sancas, drywall, espelhos, persianas e marcenaria), atendemos Curitiba e Região Metropolitana.'
+    answer: 'Sim! Para papéis de parede sob medida e adesivos decorativos, enviamos para todo o Brasil com gabarito numerado de aplicação. Para projetos completos com instalação (sancas, drywall, espelhos, persianas e marcenaria), atendemos Curitiba e Região Metropolitana.'
   },
   {
     id: 'faq-2',
@@ -230,7 +230,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-3',
     question: 'Qual o prazo médio de entrega e instalação?',
-    answer: 'O prazo varia conforme a complexidade. Envio de papel de parede/adesivo personalizado é postado em 5 a 10 dias úteis. Projetos de marcenaria sob medida e acabamentos residenciais levam em média de 30 a 50 dias após a aprovação final do projeto 3D.'
+    answer: 'O prazo varia conforme a complexidade. Envio de papel de parede sob medida ou adesivo decorativo é postado em 5 a 10 dias úteis. Projetos de marcenaria sob medida e acabamentos residenciais levam em média de 30 a 50 dias após a aprovação final do projeto 3D.'
   },
   {
     id: 'faq-4',

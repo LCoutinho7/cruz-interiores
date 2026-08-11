@@ -13,7 +13,6 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { SacSection } from './components/SacSection';
 import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
-import { QuoteCalculatorModal } from './components/QuoteCalculatorModal';
 import { ImageLightboxModal } from './components/ImageLightboxModal';
 import { MobileFab } from './components/MobileFab';
 import { PortfolioItem } from './types';
@@ -22,62 +21,40 @@ import { useGsapScroll } from './hooks/useGsapScroll';
 export default function App() {
   useGsapScroll();
 
-  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
-  const [initialServiceForModal, setInitialServiceForModal] = useState('Papel de Parede');
   const [selectedLightboxItem, setSelectedLightboxItem] = useState<PortfolioItem | null>(null);
   const [isHeroExpanded, setIsHeroExpanded] = useState(false);
-
-  const handleOpenQuoteModal = (serviceName?: string) => {
-    if (serviceName) {
-      setInitialServiceForModal(serviceName);
-    }
-    setIsQuoteModalOpen(true);
-  };
 
   return (
     <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-on-surface)] flex flex-col font-sans selection:bg-[var(--color-secondary)] selection:text-[var(--color-on-secondary)]">
       {/* Fixed Header — hidden until the hero intro has fully expanded */}
-      <Header onOpenQuoteModal={() => handleOpenQuoteModal()} visible={isHeroExpanded} />
+      <Header visible={isHeroExpanded} />
 
       {/* Main Page Layout */}
       <main className="flex-grow">
-        <HeroSection
-          onOpenQuoteModal={() => handleOpenQuoteModal()}
-          onHeroExpandedChange={setIsHeroExpanded}
-        />
+        <HeroSection onHeroExpandedChange={setIsHeroExpanded} />
         <TrustBanner />
-        <TriageSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+        <TriageSection />
         <ProblemSection />
         <DifferentialsSection />
-        <ServicesSection onSelectServiceForQuote={(service) => handleOpenQuoteModal(service)} />
+        <ServicesSection />
         <TimelineSection />
         <PortfolioSection onOpenLightbox={(item) => setSelectedLightboxItem(item)} />
         <ExpectationsSection />
         <TestimonialsSection />
         <SacSection />
-        <FinalCtaSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
+        <FinalCtaSection />
       </main>
 
       {/* Comprehensive Footer */}
-      <Footer onOpenQuoteModal={() => handleOpenQuoteModal()} />
+      <Footer />
 
       {/* Floating Mobile WhatsApp Button */}
       <MobileFab />
 
       {/* Interactive Modals */}
-      <QuoteCalculatorModal
-        isOpen={isQuoteModalOpen}
-        onClose={() => setIsQuoteModalOpen(false)}
-        initialService={initialServiceForModal}
-      />
-
       <ImageLightboxModal
         item={selectedLightboxItem}
         onClose={() => setSelectedLightboxItem(null)}
-        onSelectForSimilarQuote={() => {
-          setSelectedLightboxItem(null);
-          handleOpenQuoteModal('Marcenaria Completa');
-        }}
       />
     </div>
   );

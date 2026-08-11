@@ -3,11 +3,7 @@ import { COMPANY_CONTACT } from '../data/mockData';
 import { Phone, Mail, MapPin, Instagram, Shield, X } from 'lucide-react';
 import cruzArtIcon from '../assets/logo/cruz-art-icon.png';
 
-interface FooterProps {
-  onOpenQuoteModal: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
+export const Footer: React.FC = () => {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -15,6 +11,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openWhatsApp = () => {
+    window.open(
+      `https://wa.me/${COMPANY_CONTACT.whatsappNumber}?text=${encodeURIComponent('Olá! Vim pelo site da Cruz & Art Interiores e gostaria de solicitar um orçamento.')}`,
+      '_blank'
+    );
   };
 
   return (
@@ -75,8 +78,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                 </button>
               </li>
               <li>
-                <button onClick={onOpenQuoteModal} className="text-[var(--color-secondary)] font-semibold hover:underline">
-                  Simular Orçamento Online
+                <button onClick={openWhatsApp} className="text-[var(--color-secondary)] font-semibold hover:underline">
+                  Solicitar Orçamento
                 </button>
               </li>
             </ul>
@@ -89,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </h4>
             <ul className="space-y-2.5 text-xs text-[var(--color-outline-variant)]">
               <li>• Papel de Parede e Adesivos (Envio Brasil)</li>
-              <li>• Sancas e Iluminação Cênica (Curitiba/RM)</li>
+              <li>• Sancas em Gesso e EPS (Curitiba/RM)</li>
               <li>• Divisórias e Forros Drywall (Curitiba/RM)</li>
               <li>• Espelhos Bisotados e Lapidados (Curitiba/RM)</li>
               <li>• Persianas e Cortinas Motorizadas (Curitiba/RM)</li>
@@ -154,7 +157,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                 A <strong>Cruz & Art Interiores</strong> valoriza a privacidade e a segurança dos dados pessoais dos nossos clientes, parceiros e visitantes.
               </p>
               <p>
-                <strong>1. Coleta de Informações:</strong> As informações coletadas nos formulários de orçamento (nome, telefone, cidade e especificações do projeto) são utilizadas exclusivamente para elaboração e envio de propostas comerciais personalizadas.
+                <strong>1. Coleta de Informações:</strong> As informações preenchidas nos formulários do site (nome e dúvida ou pedido) são usadas apenas para redirecionar seu atendimento ao WhatsApp e elaborar propostas comerciais personalizadas — nada fica armazenado ou publicado no site.
               </p>
               <p>
                 <strong>2. Compartilhamento:</strong> Não vendemos ou compartilhamos seus dados com terceiros não autorizados. Os dados para envio de papéis de parede/adesivos são compartilhados estritamente com as transportadoras parceiras para fins de logística.

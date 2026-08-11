@@ -4,7 +4,6 @@ import heroBackground from '../assets/images/hero-background.webp';
 import heroVideo from '../assets/videos/hero-banner.mp4';
 
 interface HeroSectionProps {
-  onOpenQuoteModal: () => void;
   onHeroExpandedChange?: (expanded: boolean) => void;
 }
 

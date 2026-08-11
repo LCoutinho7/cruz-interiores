@@ -4,12 +4,11 @@ import { COMPANY_CONTACT } from '../data/mockData';
 import cruzArtIcon from '../assets/logo/cruz-art-icon.png';
 
 interface HeaderProps {
-  onOpenQuoteModal: () => void;
   activeSection?: string;
   visible?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection, visible = true }) => {
+export const Header: React.FC<HeaderProps> = ({ activeSection, visible = true }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -115,7 +114,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
         {/* Action Buttons */}
         <div className="hidden md:flex items-center gap-4">
           <button
-            onClick={onOpenQuoteModal}
+            onClick={openWhatsApp}
             className="btn-draw text-[var(--color-on-secondary)] rounded font-button text-sm font-semibold transform active:scale-95 shadow-sm"
           >
             <span className="px-6 py-3">Orçamento</span>
@@ -125,7 +124,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
         {/* Mobile Hamburger Toggle */}
         <div className="flex md:hidden items-center gap-3">
           <button
-            onClick={onOpenQuoteModal}
+            onClick={openWhatsApp}
             className="btn-draw text-[var(--color-on-secondary)] rounded font-button text-xs font-semibold"
           >
             <span className="px-4 py-2">Orçamento</span>
@@ -171,14 +170,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenQuoteModal, activeSection,
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenQuoteModal();
+                openWhatsApp();
               }}
-              className="btn-draw w-full text-[var(--color-on-secondary)] font-button text-sm rounded font-semibold"
-            >
-              <span className="py-3">Solicitar Orçamento</span>
-            </button>
-            <button
-              onClick={openWhatsApp}
               className="w-full py-3 border border-[var(--color-secondary)] text-[var(--color-on-surface)] font-button text-sm rounded font-semibold flex items-center justify-center gap-2"
             >
               <PhoneCall size={16} />

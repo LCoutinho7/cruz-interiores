@@ -6,7 +6,7 @@ export const DifferentialsSection: React.FC = () => {
     {
       icon: Sliders,
       title: 'Personalização real',
-      description: 'Cada padrão de papel de parede, adesivo ou móvel é projetado sob medida para as dimensões e o estilo exato do seu espaço — nada de rolo genérico de prateleira.'
+      description: 'Cada padrão de papel de parede ou móvel é projetado sob medida para as dimensões e o estilo exato do seu espaço — nada de rolo genérico de prateleira.'
     },
     {
       icon: Clock,
@@ -21,7 +21,7 @@ export const DifferentialsSection: React.FC = () => {
     {
       icon: Globe2,
       title: 'Atendimento em todo o Brasil',
-      description: 'Mesmo se você não estiver na Região Metropolitana de Curitiba, é possível adquirir papéis de parede e adesivos exclusivos com entrega rápida via transportadora.'
+      description: 'Mesmo se você não estiver na Região Metropolitana de Curitiba, é possível adquirir papéis de parede sob medida e adesivos decorativos com entrega rápida via transportadora.'
     }
   ];
 
