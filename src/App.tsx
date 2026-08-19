@@ -15,6 +15,7 @@ import { FinalCtaSection } from './components/FinalCtaSection';
 import { Footer } from './components/Footer';
 import { ImageLightboxModal } from './components/ImageLightboxModal';
 import { MobileFab } from './components/MobileFab';
+import { PasswordGate } from './components/PasswordGate';
 import { PortfolioItem } from './types';
 import { useGsapScroll } from './hooks/useGsapScroll';
 
@@ -25,6 +26,7 @@ export default function App() {
   const [isHeroExpanded, setIsHeroExpanded] = useState(false);
 
   return (
+    <PasswordGate>
     <div className="min-h-screen bg-[var(--color-surface)] text-[var(--color-on-surface)] flex flex-col font-sans selection:bg-[var(--color-secondary)] selection:text-[var(--color-on-secondary)]">
       {/* Fixed Header — hidden until the hero intro has fully expanded */}
       <Header visible={isHeroExpanded} />
@@ -57,5 +59,6 @@ export default function App() {
         onClose={() => setSelectedLightboxItem(null)}
       />
     </div>
+    </PasswordGate>
   );
 }
